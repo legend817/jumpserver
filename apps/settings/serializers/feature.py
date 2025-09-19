@@ -149,9 +149,10 @@ class ChatAISettingSerializer(serializers.Serializer):
         allow_blank=True, required=False, label=_('Proxy'),
         help_text=_('The proxy server address of the GPT service. For example: http://ip:port')
     )
-    GPT_MODEL = serializers.ChoiceField(
-        default=GPTModelChoices.gpt_4o_mini, choices=GPTModelChoices.choices,
-        label=_("GPT Model"), required=False,
+    GPT_MODEL = serializers.CharField(
+        default=GPTModelChoices.gpt_4o_mini, allow_blank=True, required=False,
+        label=_("GPT Model"), max_length=128,
+        help_text=_('GPT model name, e.g., gpt-3.5-turbo, gpt-4, gpt-4-turbo, etc.')
     )
     DEEPSEEK_BASE_URL = serializers.CharField(
         allow_blank=True, required=False, label=_('Base URL'),

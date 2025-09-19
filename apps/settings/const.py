@@ -14,7 +14,7 @@ class ChatAIMethodChoices(TextChoices):
 
 
 class ChatAITypeChoices(TextChoices):
-    gpt = 'gpt', 'GPT'
+    gpt = 'gpt', '自定义AI'
     deep_seek = 'deep-seek', 'DeepSeek'
 
 
